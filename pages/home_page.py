@@ -11,17 +11,17 @@ class HomePage:
         self.driver = driver
 
     def click_leave_a_request(self):
-        with allure.step('Click on leave a request'):
+        with allure.step('Click on leave a request button'):
             button = self.driver.find_element(By.XPATH, '//button[text()="Оставить заявку"]')
             button.click()
 
     def click_find_out_more(self):
-        with allure.step('Click on find out more'):
+        with allure.step('Click on find out more button in footer'):
             button = self.driver.find_element(By.XPATH, '//button[text()="Узнать больше"]')
             button.click()
     
     def click_current_vacancies(self):
-        with allure.step('Click on current vacancies'):
+        with allure.step('Click on current vacancies button'):
             button = self.driver.find_element(By.XPATH, '//a[text()="Актуальные вакансии"]')
             button.click()
 
@@ -50,3 +50,23 @@ class HomePage:
         with allure.step('Check that click on find out more button, scrolling to cooperation formats'):
             WebDriverWait(self.driver, 6).until(EC.visibility_of_element_located((By.XPATH, '//h2[text()="Форматы сотрудничества"]')))
             assert self.driver.find_element(By.XPATH, '//h2[text()="Форматы сотрудничества"]').is_displayed()
+
+    def click_vacancies_button(self):
+        with allure.step('Click vacancies button in footer'):
+            button = self.driver.find_element(By.XPATH, '//a[text()="Вакансии"]')
+            button.click()
+
+    def click_testimonials_button(self):
+        with allure.step('Click testimonials button in footer'):
+            button = self.driver.find_element(By.XPATH,  '//a[text()="Отзывы"]')
+            button.click()
+
+    def click_conctacts_button(self):
+        with allure.step('Click contacts button in footer'):
+            button = self.driver.find_element(By.XPATH, '//a[text()="Контакты"]')
+            button.click()
+
+    def click_outstaff_button(self):
+        with allure.step('Click outstaff button in footer'):
+            button = self.driver.find_element(By.XPATH, '//a[text()="Аутстафф"]')
+            button.click()
