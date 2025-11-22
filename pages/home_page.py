@@ -90,3 +90,8 @@ class HomePage:
         with allure.step('Click employment assistance button in cooperation formats'):
             button = self.driver.find_elements(By.XPATH, '//button[text()="Выбрать формат"]')
             button[1].click()
+
+    def scroll_to_the_cooperation_formats(self):
+        with allure.step('Scroll to the cooperation formats'):
+            form = self.driver.find_element(By.ID, 'services')
+            ActionChains(self.driver).scroll_to_element(form).perform()
