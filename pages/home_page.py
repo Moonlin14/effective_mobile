@@ -70,3 +70,23 @@ class HomePage:
         with allure.step('Click outstaff button in footer'):
             button = self.driver.find_element(By.XPATH, '//a[text()="Аутстафф"]')
             button.click()
+
+    def click_employment_button(self):
+        with allure.step('Click employment button in footer'):
+            button = self.driver.find_element(By.XPATH, '//a[text()="Трудоустройство"]')
+            button.click()
+
+    def click_consultation_button(self):
+        with allure.step('Click consultation button in footer'):
+            button = self.driver.find_element(By.XPATH, '//a[text()="Консультация"]')
+            button.click()
+    
+    def click_outstaff_button_in_cooperation_formats(self):
+        with allure.step('Click outstaff button in cooperation formats'):
+            button = self.driver.find_elements(By.XPATH, '//button[text()="Выбрать формат"]')
+            button[0].click()
+
+    def click_employment_assistance_button_in_cooperation_formats(self):
+        with allure.step('Click employment assistance button in cooperation formats'):
+            button = self.driver.find_elements(By.XPATH, '//button[text()="Выбрать формат"]')
+            button[1].click()
