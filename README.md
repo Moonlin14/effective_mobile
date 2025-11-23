@@ -1,5 +1,5 @@
-##Autotests for effective-mobile
-###Instalation
+## Autotests for effective-mobile
+### Instalation
 ```
 git clone https://github.com/Moonlin14/effective_mobile.git
 
