@@ -3,10 +3,9 @@
 ```
 git clone https://github.com/Moonlin14/effective_mobile.git
 
-```
 pip install -r requirements.txt
 ```
-##Local tests run
+## Local tests run
 ```
 pytest -v -s --alluredir allure-results
 ```
