@@ -42,14 +42,14 @@ class HomePage:
 
     def check_scroll_to_contact_form(self):
         with allure.step('Check that click on leave a request button, scrolling to contact form'):
-            WebDriverWait(self.driver, 6).until(EC.visibility_of_element_located((By.XPATH, '//h2[text()="Свяжитесь с нами"]')))
-            assert self.driver.find_element(By.XPATH, '//h2[text()="Свяжитесь с нами"]').is_displayed()
+            h2 = WebDriverWait(self.driver, 6).until(EC.visibility_of_element_located((By.XPATH, '//h2[text()="Свяжитесь с нами"]')))
+            assert h2.is_displayed()
 
     
     def check_scroll_to_the_cooperation_formats(self):
         with allure.step('Check that click on find out more button, scrolling to cooperation formats'):
-            WebDriverWait(self.driver, 6).until(EC.visibility_of_element_located((By.XPATH, '//h2[text()="Форматы сотрудничества"]')))
-            assert self.driver.find_element(By.XPATH, '//h2[text()="Форматы сотрудничества"]').is_displayed()
+            h2 = WebDriverWait(self.driver, 6).until(EC.visibility_of_element_located((By.XPATH, '//h2[text()="Форматы сотрудничества"]')))
+            assert h2.is_displayed()
 
     def click_vacancies_button(self):
         with allure.step('Click vacancies button in footer'):
@@ -95,3 +95,8 @@ class HomePage:
         with allure.step('Scroll to the cooperation formats'):
             form = self.driver.find_element(By.ID, 'services')
             ActionChains(self.driver).scroll_to_element(form).perform()
+
+    def scroll_to_the_header(self):
+        with allure.step('Scroll to the header'):
+            header = self.driver.find_elements(By.CSS_SELECTOR, 'section')
+            ActionChains(self.driver).scroll_to_element(header[0]).perform()
